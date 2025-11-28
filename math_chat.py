@@ -12,7 +12,7 @@ class MathRAG:
         
         self.api_key = os.environ.get("OPENAI_API_KEY")
         if not self.api_key:
-            raise ValueError("❌ OPENAI_API_KEY not found. Please set it in your environment variables.")
+            raise ValueError("OPENAI_API_KEY not found. Please set it in your environment variables.")
 
         self.client = OpenAI(api_key=self.api_key)
 
@@ -41,7 +41,7 @@ class MathRAG:
         if not new_files:
             return
 
-        print(f"📂 Processing {len(new_files)} new PDFs...")
+        print(f"Processing {len(new_files)} new PDFs...")
         for filename in new_files:
             self._process_single_pdf(filename)
 
