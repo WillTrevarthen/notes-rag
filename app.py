@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import base64
-from math_chat import MathRAG 
+from updated_math_rag import MathRAG 
 
 # ================= CONFIGURATION =================
 NOTES_FOLDER = "./my_notes"
