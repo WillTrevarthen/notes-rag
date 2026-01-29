@@ -8,7 +8,7 @@ NOTES_FOLDER = "./my_notes"
 DB_PATH = "./math_notes_db"
 
 st.set_page_config(
-    page_title="Math RAG Assistant",
+    page_title="Maths RAG Assistant",
     page_icon="∫",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -58,7 +58,7 @@ bot = get_chatbot()
 # ================= SIDEBAR =================
 with st.sidebar:
     # REPLACED BROKEN IMAGE WITH EMOJI HEADER
-    st.markdown("## 🧮 Math Notes")
+    st.markdown("## 🧮 Maths Notes")
     st.caption("AI-Powered Tutor")
     st.divider()
     
@@ -88,7 +88,7 @@ with st.sidebar:
     st.caption(f"📁 Source: `{NOTES_FOLDER}`")
 
 # ================= CHAT LOGIC =================
-st.title("Math Notes Assistant")
+st.title("Maths Notes Assistant")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -98,7 +98,7 @@ if len(st.session_state.messages) == 0:
     st.markdown("""
     <div style='text-align: center; padding: 30px 0;'>
         <h3>👋 Welcome!</h3>
-        <p style='color: gray;'>I can read your PDF notes and solve math problems using them.</p>
+        <p style='color: gray;'>I can read your PDF notes and solve maths problems using them.</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -131,7 +131,7 @@ for message in st.session_state.messages:
                         st.caption(message["captions"][idx])
 
 # --- CAPTURE NEW INPUT ---
-if prompt := st.chat_input("Ask a math question..."):
+if prompt := st.chat_input("Ask a maths question..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.rerun() # Force a rerun to trigger the "Generate Answer" block below
 
